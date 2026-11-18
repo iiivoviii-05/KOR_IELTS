@@ -1400,7 +1400,7 @@ function mk(){var ok=function(){},fail=function(){};
    fetch(GAS_URL,{method:"POST",redirect:"follow",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({fn:String(k),args:a})})
    .then(function(r){return r.json()})
    .then(function(j){if(j&&j.err)fail(new Error(j.err));else ok(j?j.ok:null)})
-   .catch(function(e){fail(new Error("MANG: "+((e&&e.message)||e)))})}}});
+   .catch(function(e){fail(new Error("네트워크: "+((e&&e.message)||e)))})}}});
  return p}
 window.google={script:{get run(){return mk()}}};
 })();
